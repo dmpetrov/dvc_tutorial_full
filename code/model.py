@@ -18,10 +18,18 @@ model.add(layers.Flatten())
 model.add(layers.Dense(256, activation='relu'))
 model.add(layers.Dense(1, activation='sigmoid'))
 
-conv_base.trainable = False
+conv_base.trainable = True
+set_trainable = False
+for layer in conv_base.layers:
+    if layer.name == 'block5_conv1':
+        set_trainable = True
+    if set_trainable:
+        layer.trainable = True
+    else:
+        layer.trainable = False
 
 model.compile(loss='binary_crossentropy',
-              optimizer=optimizers.RMSprop(lr=2e-5),
+              optimizer=optimizers.RMSprop(lr=1e-5),
               metrics=['acc'])
 
 train_datagen = ImageDataGenerator(
@@ -55,10 +63,9 @@ validation_generator = test_datagen.flow_from_directory(
 hist = model.fit_generator(
       train_generator,
       steps_per_epoch=100,
-      epochs=30,
+      epochs=100,
       validation_data=validation_generator,
-      validation_steps=50,
-      verbose=2)
+      validation_steps=50)
 
 model.save(os.path.join(conf.data_dir, 'model.h5'))
 pickle.dump(hist.history, open(os.path.join(conf.data_dir, 'history.p'), 'wb'))
