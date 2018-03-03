@@ -1,6 +1,6 @@
 cmd: python code/model.py
 deps:
-- md5: 5208ff061f27e3be34aea28b98882e27
+- md5: 2afa8e9eeb203cc0ac4ac2d8fac2a775
   path: code/model.py
 - md5: 52ad7b9310037aa53e53768ad824956a
   path: code/conf.py
@@ -8,8 +8,8 @@ deps:
   path: data/cats_and_dogs_small
 outs:
 - cache: true
-  md5: 08ddd8c63565a74d88f74bc7d68d0207
+  md5: 381cc92c65019c0f75286025f6587bd4
   path: data/model.h5
 - cache: true
-  md5: 3877801ebfbd2f2ea2399686dac70725
+  md5: 954477281e3e3e793346888344f7eefb
   path: data/history.p
