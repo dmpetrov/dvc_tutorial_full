@@ -4,12 +4,12 @@ deps:
   path: code/model.py
 - md5: 52ad7b9310037aa53e53768ad824956a
   path: code/conf.py
-- md5: da49cf17236a5f2b4cf7046518b272d8
+- md5: da49cf17236a5f2b4cf7046518b272d8.dir
   path: data/cats_and_dogs_small
 outs:
 - cache: true
-  md5: 5c28007ad067a5d28f9d14fb3496ce3d
+  md5: eb37924e366d35cdb611fe2322a9da7d
   path: data/model.h5
 - cache: true
-  md5: 4d572a2b7673e3f3b7e0d1bf94997a22
+  md5: 36ffd304cd2f143b995cab2f1c431df3
   path: data/history.p
