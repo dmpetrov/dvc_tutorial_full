@@ -4,5 +4,5 @@ deps:
   path: data/train.zip
 outs:
 - cache: true
-  md5: 0dd437f2f04fbf54355beab021494baa
+  md5: 0dd437f2f04fbf54355beab021494baa.dir
   path: data/train
